@@ -1,0 +1,61 @@
+{
+  "name": "comment-cleaner",
+  "displayName": "Comment Cleaner",
+  "description": "Удаляет ненужные комментарии, оставляя только те, которые начинаются с заглавной буквы.",
+  "version": "0.0.1",
+  "publisher": "Timurghoul",
+  "author": {
+    "name": "Timurghoul",
+    "email": "solanaflipper@eth.kz"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+
+  "keywords": [
+    "comments",
+    "clean",
+    "delete",
+    "formatter",
+    "vscode-extension",
+    "productivity"
+  ],
+  "icon": "icon.png",
+
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "commentCleaner.cleanSelection",
+        "title": "🧹 Очистить выделение от комментариев"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "commentCleaner.cleanSelection",
+        "key": "cmd+g",
+        "mac": "cmd+g",
+        "linux": "ctrl+g",
+        "win": "ctrl+g",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/node": "20.x",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.3.3",
+    "vsce": "^2.22.0"
+  }
+}
